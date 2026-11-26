@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical"
+	android:gravity="center"
+	android:padding="24dp">
+
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="@string/title"
+		android:textSize="11sp"/>
+
+	<TextView
+		android:id="@+id/tvCount"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="8dp"
+		android:text="0"
+		android:textSize="72sp"
+		android:textStyle="bold"
+		android:textColor="#FF1E4081"/>
+
+	<LinearLayout
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="24dp"
+		android:orientation="horizontal">
+
+		<Button
+			android:id="@+id/btnMinus"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginEnd="16dp"
+			android:text="@string/minus"/>
+
+		<Button
+			android:id="@+id/btnPlus"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@string/plus"/>
+
+	</LinearLayout>
+
+	<Button
+		android:id="@+id/btnReset"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="16dp"
+		android:text="@string/reset"/>
+
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="28dp"
+		android:text="@string/tip"
+		android:textSize="12sp"
+		android:background="#FF886363"/>
+	<Button
+		android:id="@+id/btnTen"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="×10" />
+
+</LinearLayout>
+

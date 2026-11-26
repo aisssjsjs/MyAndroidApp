@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">机械设计计算教程</string>
+    <string name="title">当前计数</string>
+    <string name="plus">加一</string>
+    <string name="minus">减一</string>
+    <string name="reset">重置</string>
+    <string name="tip">在平板上编译并运行的第一个 App</string>
+</resources>
