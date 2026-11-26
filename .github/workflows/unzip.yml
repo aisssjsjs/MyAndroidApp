@@ -1,0 +1,37 @@
+name: 解压 zip 到仓库
+
+on:
+  push:
+    paths:
+      - '**/*.zip'        # 任何位置有 zip 变化就触发
+  workflow_dispatch:      # 同时允许在 Actions 页手动触发
+
+jobs:
+  unzip:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write     # 必须！否则无法把结果写回仓库
+
+    steps:
+      - name: 拉取仓库代码
+        uses: actions/checkout@v4
+
+      - name: 查看有哪些文件（方便排查）
+        run: ls -la
+
+      - name: 解压所有 zip 并删除原包
+        run: |
+          for zipfile in *.zip; do
+            [ -e "$zipfile" ] || continue
+            echo "正在解压: $zipfile"
+            unzip -o "$zipfile"
+            rm -f "$zipfile"
+          done
+
+      - name: 提交变更回仓库
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "actions@github.com"
+          git add -A
+          git commit -m "自动解压上传的 zip" || echo "没有变更需要提交"
+          git push
